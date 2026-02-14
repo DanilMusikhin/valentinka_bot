@@ -1,0 +1,9 @@
+# Издержки работы программы
+__pycache__/
+venv/
+.vscode/
+
+# Свои файлы
+config.env
+test.py
+talk_together_bot.db 

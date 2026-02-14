@@ -1,0 +1,12 @@
+services: 
+  bot: 
+    build: .
+    container_name: valentika_bot
+    restart: unless-stopped
+    volumes: 
+      # Монтируем config.env, чтобы можно было менять без пересборки
+      - ./config/config.env:/app/config/config.env:ro
+      # Монтируем reasons.json, чтобы можно было обновлять причины
+      - ./reasons.json:/app/reasons.json:ro
+    environment:
+      - PYTHONUNBUFFERED=1
